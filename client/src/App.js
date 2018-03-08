@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-// import Trip from './components/Trip.js';
+import Trip from './components/Trip.js';
 import TripForm from './components/TripForm.js';
-// import TripList from './components/TripList.js;';
+import TripList from './components/TripList.js;';
 // import Location from './components/Location.js';
 // import Address from './components/Address.js';
 
@@ -27,7 +27,12 @@ class App extends Component {
   render() {
     const { trips } = this.state;
 
-    return <TripForm trips={trips} addTrip={this.addTrip} />;
+    return (
+      <div>
+        <TripForm trips={trips} addTrip={this.addTrip} />
+        <TripList trips={trips} />
+      </div>
+    );
   }
 }
 
