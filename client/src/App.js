@@ -8,11 +8,10 @@ import TripForm from './components/TripForm.js';
 class App extends Component {
   state = { trips: [], location: [], address: [] };
 
-  addTrip = () => {
-    //TODO Make API call to Rails to Add Item.
-    // const { trips } = this.state;
-    // const id = Math.floor((1 + Math.random()) * 1000);
-    // this.setState({ trips: [...trips, { id, name }] });
+  addTrip = (trip) => {
+    // TODO Make API call to Rails to Add Item.
+    const { trips } = this.state;
+    this.setState({ trips: [...trips, trip] });
   };
 
   deleteTrip = (id) => {
@@ -28,7 +27,7 @@ class App extends Component {
   render() {
     const { trips } = this.state;
 
-    return <TripForm trips={trips} />;
+    return <TripForm trips={trips} addTrip={this.addTrip} />;
   }
 }
 
