@@ -6,7 +6,7 @@ import TripList from './components/TripList.js;';
 // import Address from './components/Address.js';
 
 class App extends Component {
-  state = { trips: [], location: [], address: [] };
+  state = { trips: [], locations: [], addresses: [] };
 
   addTrip = (trip) => {
     // TODO Make API call to Rails to Add Item.
@@ -30,9 +30,9 @@ class App extends Component {
     return (
       <div>
         <TripForm trips={trips} addTrip={this.addTrip} />
-        <TripList trips={trips} />
+        <TripList trips={trips} locations={locations} addresses={addresses} addLocation={this.addLocation} addAddress={this.addAddress} />
       </div>
-    );
+    )
   }
 }
 
