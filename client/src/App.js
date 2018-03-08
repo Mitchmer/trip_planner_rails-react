@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Trip from './components/Trip.js';
 import TripForm from './components/TripForm.js';
-import TripList from './components/TripList.js;';
+import TripList from './components/TripList.js';
 // import Location from './components/Location.js';
 // import Address from './components/Address.js';
 
@@ -30,9 +30,9 @@ class App extends Component {
     return (
       <div>
         <TripForm trips={trips} addTrip={this.addTrip} />
-        <TripList trips={trips} locations={locations} addresses={addresses} addLocation={this.addLocation} addAddress={this.addAddress} />
+        <TripList trips={trips} deleteTrip={this.deleteTrip} />
       </div>
-    )
+    );
   }
 }
 
