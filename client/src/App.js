@@ -1,20 +1,32 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+// import Trip from './components/Trip.js';
+// import Location from './components/Location.js';
+// import Address from './components/Address.js';
 
 class App extends Component {
+  state = { trips: [], location: [], address: [] };
+
+  addTrip = () => {
+    //TODO Make API call to Rails to Add Item.
+    const { trips } = this.state;
+    const id = Math.floor((1 + Math.random()) * 1000);
+    this.setState({ trips: [...trips, { id, name }] });
+  };
+
+  deleteTrip = (id) => {
+    //TODO Make API call to Rails to Delete Item.
+    const { trips } = this.state;
+    this.setState({ trips: trips.filter((t) => t.id !== id) });
+  };
+
+  addLocation = (id) => {};
+
+  addAddress = (id) => {};
+
   render() {
-    return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
-      </div>
-    );
+    const { trip } = this.state;
+
+    return <Trip trips={trips} />;
   }
 }
 
