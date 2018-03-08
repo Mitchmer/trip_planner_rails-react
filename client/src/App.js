@@ -30,11 +30,9 @@ class App extends Component {
     return (
       <div>
         <TripForm trips={trips} addTrip={this.addTrip} />
-        <TripList trips={trips} 
-          // locations={locations} addresses={addresses} addLocation={this.addLocation} addAddress={this.addAddress}
-        />
+        <TripList trips={trips} deleteTrip={this.deleteTrip} />
       </div>
-    )
+    );
   }
 }
 

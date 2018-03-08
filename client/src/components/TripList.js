@@ -8,7 +8,7 @@ const TripList = ({ trips, deleteTrip }) => {
         <Trip key={trip.id} {...trip} deleteTrip={deleteTrip} />
       ))}
     </div>
-  )
+  );
 };
 
-export default TripList
+export default TripList;
