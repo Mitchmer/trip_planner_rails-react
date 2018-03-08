@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Todo = ({ id, name, deleteTrip, addLocation }) => (
+const Trip = ({ id, name, deleteTrip }) => (
   <div>
     <div>
       {name}
@@ -9,9 +9,9 @@ const Todo = ({ id, name, deleteTrip, addLocation }) => (
   <button onClick={() => deleteTrip(id)}>
     Delete
   </button>
-  <button onClick={() => addLocation(id)}>
-    Add Location
-  </button>
+  // <button onClick={() => addLocation(id)}>
+  //   Add Location
+  // </button>
 )
 
 export default Trip

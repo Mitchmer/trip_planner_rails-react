@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 // import Trip from './components/Trip.js';
+import TripForm from './components/TripForm.js';
+// import TripList from './components/TripList.js;';
 // import Location from './components/Location.js';
 // import Address from './components/Address.js';
 
@@ -8,9 +10,9 @@ class App extends Component {
 
   addTrip = () => {
     //TODO Make API call to Rails to Add Item.
-    const { trips } = this.state;
-    const id = Math.floor((1 + Math.random()) * 1000);
-    this.setState({ trips: [...trips, { id, name }] });
+    // const { trips } = this.state;
+    // const id = Math.floor((1 + Math.random()) * 1000);
+    // this.setState({ trips: [...trips, { id, name }] });
   };
 
   deleteTrip = (id) => {
@@ -24,9 +26,9 @@ class App extends Component {
   addAddress = (id) => {};
 
   render() {
-    const { trip } = this.state;
+    const { trips } = this.state;
 
-    return <Trip trips={trips} />;
+    return <TripForm trips={trips} />;
   }
 }
 

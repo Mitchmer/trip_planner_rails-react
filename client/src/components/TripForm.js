@@ -1,15 +1,15 @@
-import React from 'react'
+import React from 'react';
 
 class TripForm extends React.Component {
   handleChange = (e) => {
-    this.setState({ name: e.target.value })
-  }
+    this.setState({ name: e.target.value });
+  };
 
   handleSubmit = (e) => {
     e.preventDefault();
     this.props.addTrip(this.state.name);
-    this.setState({ name: '' })
-  }
+    this.setState({ name: '' });
+  };
 
   render() {
     return (
@@ -21,8 +21,8 @@ class TripForm extends React.Component {
           onChange={this.handleChange}
         />
       </form>
-    )
+    );
   }
 }
 
-export default TripForm
+export default TripForm;
