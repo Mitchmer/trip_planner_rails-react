@@ -13,7 +13,7 @@ const Location = ({ id, name, updateLocation, deleteLocation }) => (
       <input
         id={`location-${id}`}
         type="checkbox"
-        defaultChecked={complete}
+        // defaultChecked={complete}
         onClick={() => updateLocation(id)}
       />
       <label htmlFor={`item-${id}`}>Would You Recommend this Location?</label>
