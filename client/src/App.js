@@ -20,7 +20,10 @@ class App extends Component {
     this.setState({ trips: trips.filter((t) => t.id !== id) });
   };
 
-  addLocation = (id) => {};
+  addLocation = (location) => {
+    const { locations } = this.state;
+    this.setState({ locations: [...locations, location] });
+  };
 
   addAddress = (id) => {};
 
@@ -30,7 +33,11 @@ class App extends Component {
     return (
       <div>
         <TripForm trips={trips} addTrip={this.addTrip} />
-        <TripList trips={trips} deleteTrip={this.deleteTrip} />
+        <TripList
+          trips={trips}
+          deleteTrip={this.deleteTrip}
+          addLocation={this.addLocation}
+        />
       </div>
     );
   }
