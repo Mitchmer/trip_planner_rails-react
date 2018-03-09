@@ -28,9 +28,10 @@ class App extends Component {
   };
 
   deleteTrip = (id) => {
-    //TODO Make API call to Rails to Delete Item.
-    const { trips } = this.state;
-    this.setState({ trips: trips.filter((t) => t.id !== id) });
+    fetch(`/api/trips/${id}`, { method: 'DELETE' }).then(() => {
+      const { trips } = this.state;
+      this.setState({ trips: trips.filter((t) => t.id !== id) });
+    });
   };
 
   addLocation = (location) => {

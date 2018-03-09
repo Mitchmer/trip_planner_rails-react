@@ -12,6 +12,11 @@ class Api::TripsController < ApplicationController
     end
   end
 
+  def destroy
+    Trip.find(params[:id]).destroy
+    render json: { message: 'Item deleted.' }
+  end
+
   private
 
   def trip_params
