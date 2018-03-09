@@ -16,14 +16,15 @@ class LocationForm extends React.Component {
 
   render() {
     return (
-      <form
-        onSubmit={this.handleSubmit}
-        placeholder="Add A New Location"
-        required
-        value={this.state.name}
-        onChange={this.handleChange}
-        name="Name"
-      />
+      <form onSubmit={this.handleSubmit}>
+        <input
+          placeholder="Add A New Location"
+          required
+          value={this.state.name}
+          onChange={this.handleChange}
+          name="name"
+        />
+      </form>
     );
   }
 }

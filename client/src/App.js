@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Trip from './components/Trip.js';
 import TripForm from './components/TripForm.js';
 import TripList from './components/TripList.js';
+import LocationForm from './components/LocationForm.js';
 // import Location from './components/Location.js';
 // import Address from './components/Address.js';
 
