@@ -1,23 +1,23 @@
-import React from 'react'
+import React from 'react';
 
 class AddressForm extends React.Component {
   // state = { Latitude: '', Longitude: '' }
-  state = { title: '' }
+  state = { title: '' };
 
   handleChange = (e) => {
-    const { name, value } = e.target
-    this.setState({ [name]: value })
-  }
+    const { name, value } = e.target;
+    this.setState({ [name]: value });
+  };
 
   handleSubmit = (e) => {
-    e.preventDefault()
-    this.props.addItem(this.state.title)
-    this.setState({ title: '' })
+    e.preventDefault();
+    this.props.addAddress(this.state.title);
+    this.setState({ title: '' });
     // this.props.addItem(this.state.Latitude)
     // this.props.addItem(this.state.Longitude)
     // this.setState({ Latitude: '' })
     // this.setState({ Longitude: '' })
-  }
+  };
 
   render() {
     return (
@@ -36,9 +36,9 @@ class AddressForm extends React.Component {
           onChange={this.handleChange}
           name="Longitude"
         />
-        </form>
-      )
-    }
+      </form>
+    );
   }
+}
 
-export default AddressForm
+export default AddressForm;
