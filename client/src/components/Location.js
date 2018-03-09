@@ -35,7 +35,7 @@ class Location extends React.Component {
           <div
             className="col m2"
             style={styles.pointer}
-            onClick={() => deleteLocation(id)}
+            onClick={() => deleteLocation(id)} 
           >
             DEL
           </div>

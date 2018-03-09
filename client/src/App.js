@@ -34,6 +34,10 @@ class App extends Component {
     this.setState({ locations: locations.filter((t) => t.id !== id) });
   };
 
+  updateLocation = (location) => {
+    
+  }
+
   addAddress = (id) => {
     const { addresses } = this.state;
     this.setState({ addresses: addresses.filter((t) => t.id !== id) });

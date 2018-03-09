@@ -9,7 +9,7 @@ class LocationForm extends React.Component {
 
   handleSubmit = (e) => {
     e.preventDefault();
-    const { id } = this.props;
+    const id = Math.floor((1 + Math.random()) * 1000);
     this.props.addLocation({ id, name: this.state.name });
     this.setState({ name: '' });
   };
