@@ -34,6 +34,10 @@ class App extends Component {
     this.setState({ locations: locations.filter((t) => t.id !== id) });
   };
 
+  updateLocation = (id) => {
+    //todo make api call to rails to update/edit item
+  }
+
   addAddress = (id) => {};
 
   render() {
