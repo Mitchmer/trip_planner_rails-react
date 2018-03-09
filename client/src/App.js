@@ -34,9 +34,18 @@ class App extends Component {
     });
   };
 
-  addLocation = (location) => {
+  addLocation = (name) => {
+    const id = name.id;
+    fetch(`/api/trips/${id}/locations`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        Accept: 'application/json',
+      },
+      body: JSON.stringify(name),
+    });
     const { locations } = this.state;
-    this.setState({ locations: [...locations, location] });
+    this.setState({ locations: [...locations, name] });
   };
 
   deleteLocation = (id) => {

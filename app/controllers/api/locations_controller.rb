@@ -1,7 +1,9 @@
 class Api::LocationsController < ApplicationController
+  before_action :set_trip 
 
   def create
-    location = Location.new(location_params)
+    location = @trip.locations.new(location_params)
+    binding.pry
     if location.save
       render json: location
     else
@@ -13,5 +15,9 @@ class Api::LocationsController < ApplicationController
 
   def location_params
     params.require(:location).permit(:name)
+  end
+
+  def set_trip
+    @trip = Trip.find(params[:trip_id])
   end
 end
