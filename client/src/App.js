@@ -11,10 +11,19 @@ import LocationList from './components/LocationList.js';
 class App extends Component {
   state = { trips: [], locations: [], addresses: [] };
 
-  addTrip = (trip) => {
-    // TODO Make API call to Rails to Add Item.
-    const { trips } = this.state;
-    this.setState({ trips: [...trips, trip] });
+  addTrip = (name) => {
+    fetch('/api/trips', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'Accept': 'application/json'
+      },
+      body: JSON.stringify(name)
+    }).then( res => res.json() )
+      .then( newTrip => {
+        const { trips } = this.state;
+        this.setState({ trips: [...trips, newTrip] })
+      })
   };
 
   deleteTrip = (id) => {
@@ -48,7 +57,7 @@ class App extends Component {
 
     return (
       <div>
-        <TripForm trips={trips} addTrip={this.addTrip} />
+        <TripForm addTrip={this.addTrip} />
         <TripList
           trips={trips}
           deleteTrip={this.deleteTrip}

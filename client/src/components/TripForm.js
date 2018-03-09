@@ -9,8 +9,7 @@ class TripForm extends React.Component {
 
   handleSubmit = (e) => {
     e.preventDefault();
-    const id = Math.floor((1 + Math.random()) * 1000);
-    this.props.addTrip({ id, name: this.state.name });
+    this.props.addTrip({ name: this.state.name });
     this.setState({ name: '' });
   };
 
