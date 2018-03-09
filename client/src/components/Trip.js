@@ -24,7 +24,7 @@ class Trip extends React.Component {
           <div>{name}</div>
           <button onClick={() => deleteTrip(id)}>Delete</button>
           <button onClick={this.toggleForm}>Add Location</button>
-          <LocationForm />
+          <LocationForm id={id} addLocation={addLocation} />
         </div>
       );
     }

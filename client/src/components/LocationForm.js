@@ -4,13 +4,13 @@ class LocationForm extends React.Component {
   state = { name: '' };
 
   handleChange = (e) => {
-    const { name, value } = e.target;
-    this.setState({ [name]: value });
+    this.setState({ name: e.target.value });
   };
 
   handleSubmit = (e) => {
     e.preventDefault();
-    this.props.addLocation(this.state.name);
+    const { id } = this.props;
+    this.props.addLocation({ id, name: this.state.name });
     this.setState({ name: '' });
   };
 
