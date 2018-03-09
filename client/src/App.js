@@ -56,8 +56,13 @@ class App extends Component {
     const { trips, locations } = this.state;
 
     return (
+<<<<<<< HEAD
       <div>
         <TripForm addTrip={this.addTrip} />
+=======
+      <div className="row">
+        <TripForm trips={trips} addTrip={this.addTrip} />
+>>>>>>> add materialize
         <TripList
           trips={trips}
           deleteTrip={this.deleteTrip}
