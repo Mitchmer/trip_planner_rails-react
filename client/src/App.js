@@ -16,14 +16,15 @@ class App extends Component {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
-        'Accept': 'application/json'
+        Accept: 'application/json',
       },
-      body: JSON.stringify(name)
-    }).then( res => res.json() )
-      .then( newTrip => {
+      body: JSON.stringify(name),
+    })
+      .then((res) => res.json())
+      .then((newTrip) => {
         const { trips } = this.state;
-        this.setState({ trips: [...trips, newTrip] })
-      })
+        this.setState({ trips: [...trips, newTrip] });
+      });
   };
 
   deleteTrip = (id) => {
@@ -43,9 +44,7 @@ class App extends Component {
     this.setState({ locations: locations.filter((t) => t.id !== id) });
   };
 
-  updateLocation = (location) => {
-    
-  }
+  updateLocation = (location) => {};
 
   addAddress = (id) => {
     const { addresses } = this.state;
@@ -56,13 +55,8 @@ class App extends Component {
     const { trips, locations } = this.state;
 
     return (
-<<<<<<< HEAD
-      <div>
-        <TripForm addTrip={this.addTrip} />
-=======
       <div className="row">
         <TripForm trips={trips} addTrip={this.addTrip} />
->>>>>>> add materialize
         <TripList
           trips={trips}
           deleteTrip={this.deleteTrip}
