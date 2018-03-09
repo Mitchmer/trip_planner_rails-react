@@ -34,7 +34,10 @@ class App extends Component {
     this.setState({ locations: locations.filter((t) => t.id !== id) });
   };
 
-  addAddress = (id) => {};
+  addAddress = (id) => {
+    const { addresses } = this.state;
+    this.setState({ addresses: addresses.filter((t) => t.id !== id) });
+  };
 
   render() {
     const { trips, locations } = this.state;
@@ -50,7 +53,7 @@ class App extends Component {
         <LocationList
           locations={locations}
           deleteLocation={this.deleteLocation}
-          // addLocation={this.addLocation}
+          addAddress={this.addAddress}
         />
       </div>
     );
