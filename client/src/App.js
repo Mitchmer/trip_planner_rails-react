@@ -34,24 +34,30 @@ class App extends Component {
     });
   };
 
-  addLocation = (name) => {
-    const id = name.id;
+  addLocation = (location) => {
+    const id = location.id;
     fetch(`/api/trips/${id}/locations`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
         Accept: 'application/json',
       },
-      body: JSON.stringify(name),
-    });
-    const { locations } = this.state;
-    this.setState({ locations: [...locations, name] });
+      body: JSON.stringify(location),
+    })
+      .then((res) => res.json())
+      .then((newLocation) => {
+        const { locations } = this.state;
+        this.setState({ locations: [...locations, newLocation] });
+      });
   };
 
-  deleteLocation = (id) => {
-    //TODO Make API call to Rails to Delete Item.
-    const { locations } = this.state;
-    this.setState({ locations: locations.filter((t) => t.id !== id) });
+  deleteLocation = (trip_id, id) => {
+    fetch(`/api/trips/${trip_id}/locations/${id}`, { method: 'DELETE' }).then(
+      () => {
+        const { locations } = this.state;
+        this.setState({ locations: locations.filter((t) => t.id !== id) });
+      },
+    );
   };
 
   updateLocation = (location) => {};

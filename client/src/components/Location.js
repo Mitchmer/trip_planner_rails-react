@@ -15,7 +15,14 @@ class Location extends React.Component {
       color: 'red',
     };
 
-    const { id, name, updateLocation, deleteLocation, addAddress } = this.props;
+    const {
+      trip_id,
+      id,
+      name,
+      updateLocation,
+      deleteLocation,
+      addAddress,
+    } = this.props;
 
     if (!this.state.hideForm) {
       return (
@@ -26,7 +33,7 @@ class Location extends React.Component {
               id={`location-${id}`}
               type="checkbox"
               // defaultChecked={complete}
-              onClick={() => updateLocation(id)}
+              onClick={() => updateLocation(trip_id, id)}
             />
             <label htmlFor={`item-${id}`}>
               Would You Recommend this Location?
@@ -35,7 +42,7 @@ class Location extends React.Component {
           <div
             className="col m2"
             style={styles.pointer}
-            onClick={() => deleteLocation(id)} 
+            onClick={() => deleteLocation(trip_id, id)}
           >
             DEL
           </div>
