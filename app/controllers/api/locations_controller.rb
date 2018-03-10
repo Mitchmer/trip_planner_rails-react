@@ -13,8 +13,7 @@ class Api::LocationsController < ApplicationController
   end
 
   def destroy
-    @location.destroy
-    render json: { message: 'Item deleted.'}
+    location = Locations.find(params[:id])
   end
 
   private
