@@ -11,6 +11,17 @@ import LocationList from './components/LocationList.js';
 class App extends Component {
   state = { trips: [], locations: [], addresses: [] };
 
+  componentDidMount() {
+    fetch('/api/trips', {
+      method: 'GET',
+    })
+      .then((res) => res.json())
+      .then((trip) => {
+        const { trips } = this.state;
+        this.setState({ trips: trip });
+      });
+  }
+
   addTrip = (name) => {
     fetch('/api/trips', {
       method: 'POST',
